@@ -1,13 +1,18 @@
-
+/*
+Travelling sales person
+SCT221-0207/2023 -- Marylyne Nashipae
+SCT221-0181/2023 -- Brian Kyalo Kimanzi
+SCT221-0522/2022 -- Kaguchia Kago 
+ */
 #include <stdio.h>
 #include <limits.h>
 
-#define MAX 30 // Maximum number of cities 
+#define MAX 20 // Maximum number of cities 
 #define INF INT_MAX  // INF = "infinity"
 
 int No_City; // Number of cities
 int costMatrix[MAX][MAX]; 
-int dynamicPro[1 << MAX][MAX]; // dynamicprogramming to store minimum costs
+int dynamicProg[1 << MAX][MAX]; // dynamicprogramming to store minimum costs
 
 // Function to solve TSP using Dynamic Programming 
 int TravellingSalesMan(int mask, int pos) {
@@ -17,8 +22,8 @@ int TravellingSalesMan(int mask, int pos) {
     }
 
     // If this subproblem is already solved, return the stored result
-    if (dynamicPro[mask][pos] != -1) {
-        return dynamicPro[mask][pos];
+    if (dynamicProg[mask][pos] != -1) {
+        return dynamicProg[mask][pos];
     }
 
     int res = INF;  //Initialize the minimum cost as "infinity"
@@ -34,7 +39,7 @@ int TravellingSalesMan(int mask, int pos) {
     }
 
     // Store and return the minimum cost
-    return dynamicPro[mask][pos] = res;
+    return dynamicProg[mask][pos] = res;
 }
 
 int main() {
@@ -57,7 +62,7 @@ int main() {
     // Initialize g table with -1
     for (int i = 0; i < (1 << MAX); i++) {
         for (int j = 0; j < MAX; j++) {
-            dynamicPro[i][j] = -1;
+            dynamicProg[i][j] = -1;
         }
     }
 
@@ -68,5 +73,6 @@ int main() {
 
     return 0;
 }
+
 
 
