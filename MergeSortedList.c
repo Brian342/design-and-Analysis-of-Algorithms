@@ -31,18 +31,35 @@ void mergeSortedArray(int Array1[], int size1, int array2[], int size2, int merg
 }
 
 int main() {
-    // Example usage
-    int array1[] = {11, 13, 15, 17};
-    int array2[] = {12, 14, 16, 18};
-    int size1 = sizeof(array1) / sizeof(array1[0]);
-    int size2 = sizeof(array2) / sizeof(array2[0]);
+    int size1, size2;
+
+    // Get size and elements of the first array from user
+    printf("Enter the number of elements in the first array: ");
+    scanf("%d", &size1);
+    int array1[size1];
+    printf("Enter the elements of the first array in sorted order :\n");
+    for (int i = 0; i < size1; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &array1[i]);
+    }
+
+    // Get size and elements of the second array from user
+    printf("Enter the number of elements in the second array: ");
+    scanf("%d", &size2);
+    int array2[size2];
+    printf("Enter the elements of the second array in sorted error:\n");
+    for (int i = 0; i < size2; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &array2[i]);
+    }
+
     int mergedList[size1 + size2];
 
     // Call the merge function
     mergeSortedArray(array1, size1, array2, size2, mergedList);
 
     // Print the merged sorted array
-    printf("Merged  Array: ");
+    printf("Merged Array: ");
     for (int i = 0; i < size1 + size2; i++) {
         printf("%d ", mergedList[i]);
     }
@@ -50,3 +67,5 @@ int main() {
 
     return 0;
 }
+
+
