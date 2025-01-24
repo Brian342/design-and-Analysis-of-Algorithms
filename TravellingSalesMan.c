@@ -1,5 +1,5 @@
 /*
-Travelling sales person
+Travelling sales Man
 SCT221-0207/2023 -- Marylyne Nashipae
 SCT221-0181/2023 -- Brian Kyalo Kimanzi
 SCT221-0522/2022 -- Kaguchia Kago 
@@ -14,7 +14,7 @@ int No_City; // Number of cities
 int costMatrix[MAX][MAX]; 
 int dynamicProg[1 << MAX][MAX]; // dynamicprogramming to store minimum costs
 
-// Function to solve TSP using Dynamic Programming 
+// Function to solve Travelling sales man using Dynamic Programming 
 int TravellingSalesMan(int mask, int pos) {
     // If all cities are visited, return cost to return to the starting city
     if (mask == (1 << No_City) - 1) {
@@ -66,7 +66,7 @@ int main() {
         }
     }
 
-    // Solve TSP starting from city 0 with only city 0 visited mask = 1
+    // Solve Travelling sales man starting from city 0 with only city 0 visited mask = 1
     int output = TravellingSalesMan(1, 0);
 
     printf("The minimum cost of all cities visited = %d\n", output);
